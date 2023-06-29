@@ -1,0 +1,31 @@
+{
+    "name": "meromn/use-case-generator",
+    "description": "Simple package to generate use case class for Symfony domain-driven design aproach",
+    "type": "symfony-bundle",
+    "authors": [
+        {
+            "name": "Paul Strentz",
+            "email": "strentz.paul@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/console": "^6.3",
+        "php": ">=8.2",
+        "symfony/config": "^6.3",
+        "symfony/dependency-injection": "^6.3"
+    },
+    "require-dev": {
+        "symfony/phpunit-bridge": "^6.3"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Meromn\\UseCaseGenerator\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Meromn\\Tests\\UseCaseGenerator\\": "tests/"
+        }
+    }
+}
