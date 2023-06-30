@@ -70,7 +70,7 @@ readonly final class UseCaseGeneratorService implements UseCaseGeneratorServiceI
         FileHelper::createFileIfNotExist($path . $this->useCaseClassBaseName . 'Test.php', $namespace);
         FileHelper::createFileIfNotExist($path . $this->requestClassBaseName . 'Test.php', $namespace);
         FileHelper::createFileIfNotExist($path . $this->responseClassBaseName . 'Test.php', $namespace);
-        $basePathFolderLocation = str_replace($this->projectDir . '/', '', $this->folderLocation);
+        $basePathFolderLocation = str_replace($this->projectDir . '/', '', $this->folderTestLocation);
         $baseSuccessString = $basePathFolderLocation . '/' . $useCaseName . '/';
         return [
             $baseSuccessString . $this->useCaseClassBaseName . '.php',
