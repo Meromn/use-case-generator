@@ -1,5 +1,7 @@
 # UseCase Generator
 
+![build workflow](https://github.com/Meromn/use-case-generator/actions/workflows/ci.yaml/badge.svg)
+
 
 UseCase Generator is a **smart command** that creates use case files in a matter of seconds, inspired by [symfony/maker-bundle](https://github.com/symfony/maker-bundle).
 
