@@ -1,26 +1,19 @@
-
-<div style="text-align:center;">
-
 # UseCase Generator
 
----
 
 UseCase Generator is a **smart command** that creates use case files in a matter of seconds, inspired by [symfony/maker-bundle](https://github.com/symfony/maker-bundle).
 
-[Description](#description) •
-[Usage](#usage) •
-[Installation](#installation) •
-[Configuration](#configuration)
+- [Description](#description)
+- [Usage](#usage)
+- [Installation](#installation)
+- [Configuration](#configuration)
 
-</div>
 
----
 ## Description
 Create your UseCase files within a second. Similar to the maker bundle that creates entity and repository files, this bundle generates files for your use case. To perform this magic, simply run: `php bin/console meromn:maker:use-case`
 
 By default, it creates three UseCase files in a folder named by the user. The command will prompt you to create test files as well.
 
----
 ## Usage
 There is only one command to rule them all.
 
@@ -51,7 +44,6 @@ php bin/console meromn:maker:use-case CreateUseCase -t
 
 This command creates a folder named CreateUseCase with the associated files, as well as the test files.
 
----
 ## Installation
 To install the UseCase Generator bundle, you can use composer:
 
@@ -60,7 +52,6 @@ composer require meromn/use-case-generator --dev
 ```
 And that's it! Check [Configuration](#configuration) section to modify the default values.
 
----
 ## Configuration
 You can adjust some configuration options depending on your project. Update the following YAML file:
 ```yaml
