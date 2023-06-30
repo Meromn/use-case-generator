@@ -28,6 +28,8 @@ class FileHelperTest extends TestCase
     public function testCreateFolderIfNotExist(): void
     {
         $projectDirPath = self::PROJECT_DIR;
+        $varDirPath = $projectDirPath . '/var/';
+        $r = FileHelper::createFolderIfNotExist($varDirPath);
         $basePath = $projectDirPath . self::BASE_PATH;
         $r = FileHelper::createFolderIfNotExist($basePath);
         if ($r) {

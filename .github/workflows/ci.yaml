@@ -1,0 +1,34 @@
+name: Use Case Generator bundle CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  tests:
+    name: Use case generator Bundle
+    # https://hub.docker.com/_/ubuntu/
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        include:
+          - php: '8.2'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "${{ matrix.php }}"
+          extensions: mbstring, xml, ctype, iconv, intl, pdo_sqlite, dom, filter, gd, iconv, json, mbstring, pdo
+          tools: composer:v2
+        env:
+          update: true
+
+      - name: Install Composer dependencies
+        run: composer update
+
+      - name: Run tests
+        run: SYMFONY_DEPRECATIONS_HELPER=disabled ./vendor/bin/simple-phpunit
