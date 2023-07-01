@@ -79,7 +79,6 @@ class UseCaseGeneratorServiceTest extends TestCase
      */
     public static function tearDownAfterClass(): void
     {
-        dd('ici');
         $projectDirPath = self::PROJECT_DIR;
         $basePath = $projectDirPath . self::BASE_PATH;
         $basePathTest = $projectDirPath . self::BASE_PATH_TEST;
