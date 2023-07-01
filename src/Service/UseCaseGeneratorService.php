@@ -5,7 +5,7 @@ namespace Meromn\UseCaseGenerator\Service;
 use Meromn\UseCaseGenerator\Contracts\Service\UseCaseGeneratorServiceInterface;
 use Meromn\UseCaseGenerator\Helper\FileHelper;
 
-readonly final class UseCaseGeneratorService implements UseCaseGeneratorServiceInterface
+final class UseCaseGeneratorService implements UseCaseGeneratorServiceInterface
 {
     /**
      * @param string $folderLocation
