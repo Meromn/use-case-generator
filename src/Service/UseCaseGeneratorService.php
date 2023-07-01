@@ -47,6 +47,7 @@ final class UseCaseGeneratorService implements UseCaseGeneratorServiceInterface
             $path . $this->useCaseClassBaseName . '.php',
             $this->useCaseClassBaseName,
             $namespace,
+            false,
             $this->requestClassBaseName,
             $this->responseClassBaseName
         );
@@ -74,9 +75,17 @@ final class UseCaseGeneratorService implements UseCaseGeneratorServiceInterface
         $path .= '/' . $useCaseName . '/';
         $namespace = $this->baseTestsNamespaceForUseCase . '\\' . $useCaseName;
         FileHelper::createFolderIfNotExist($path);
-        FileHelper::createFileIfNotExist($path . $this->useCaseClassBaseName . 'Test.php', $namespace);
-        FileHelper::createFileIfNotExist($path . $this->requestClassBaseName . 'Test.php', $namespace);
-        FileHelper::createFileIfNotExist($path . $this->responseClassBaseName . 'Test.php', $namespace);
+        FileHelper::createFileIfNotExist($path . $this->useCaseClassBaseName . 'Test.php', $namespace, true);
+        FileHelper::appendBaseTextToFile(
+            $path . $this->useCaseClassBaseName . 'Test.php',
+            $this->useCaseClassBaseName . 'Test',
+            $namespace,
+            true,
+            $this->requestClassBaseName,
+            $this->responseClassBaseName,
+        );
+        FileHelper::createFileIfNotExist($path . $this->requestClassBaseName . 'Test.php', $namespace, true);
+        FileHelper::createFileIfNotExist($path . $this->responseClassBaseName . 'Test.php', $namespace, true);
         $basePathFolderLocation = str_replace($this->projectDir . '/', '', $this->folderTestLocation);
         $baseSuccessString = $basePathFolderLocation . '/' . $useCaseName . '/';
         return [
