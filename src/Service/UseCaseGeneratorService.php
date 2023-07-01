@@ -43,6 +43,13 @@ final class UseCaseGeneratorService implements UseCaseGeneratorServiceInterface
         $namespace = $this->baseNamespaceForUseCase . '\\' . $useCaseName;
         FileHelper::createFolderIfNotExist($path);
         FileHelper::createFileIfNotExist($path . $this->useCaseClassBaseName . '.php', $namespace);
+        FileHelper::appendBaseTextToFile(
+            $path . $this->useCaseClassBaseName . '.php',
+            $this->useCaseClassBaseName,
+            $namespace,
+            $this->requestClassBaseName,
+            $this->responseClassBaseName
+        );
         FileHelper::createFileIfNotExist($path . $this->requestClassBaseName . '.php', $namespace);
         FileHelper::createFileIfNotExist($path . $this->responseClassBaseName . '.php', $namespace);
         $basePathFolderLocation = str_replace($this->projectDir . '/', '', $this->folderLocation);
